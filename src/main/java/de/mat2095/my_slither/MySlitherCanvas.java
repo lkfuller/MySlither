@@ -1,7 +1,6 @@
 package de.mat2095.my_slither;
 
-import static de.mat2095.my_slither.MySlitherModel.PI2;
-
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -13,7 +12,8 @@ import java.awt.geom.Rectangle2D;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
-import javax.swing.*;
+
+import static de.mat2095.my_slither.MySlitherModel.PI2;
 
 
 final class MySlitherCanvas extends JPanel {
@@ -77,7 +77,7 @@ final class MySlitherCanvas extends JPanel {
 
         addMouseWheelListener(e -> {
             zoom -= e.getWheelRotation();
-            zoom = Math.max(zoom, 0);
+            zoom = Math.max(zoom, 10);
             zoom = Math.min(zoom, 18);
         });
 
